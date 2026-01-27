@@ -17,9 +17,9 @@ enabled         = true
 min_node_count = 2
 max_node_count = 10
 }
-}
+}```
 
-# 2. Deploying and Managing Application
+# 2.Deploying and Managing Application
 
 # Workload Deployment
 
@@ -42,6 +42,7 @@ containers
 image
 ports
 -containerPort:
+```
 
 # Autoscaling
 HPA YAML
@@ -63,3 +64,16 @@ name: cpu
 target:
 type: utilization
 averageUtilization: 70
+```
+
+# Practical Guide: Buiding & Managing Iac with Terraform and Terramate
+
+# 1.Setting Up a Terraform Project
+
+Googlemain.tf to develop goglr 
+
+
+# CI/CD Integration
+
+
+
