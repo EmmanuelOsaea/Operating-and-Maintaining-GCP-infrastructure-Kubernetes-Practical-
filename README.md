@@ -70,10 +70,43 @@ averageUtilization: 70
 
 # 1.Setting Up a Terraform Project
 
-Googlemain.tf to develop goglr 
+Googlemain.tf used to develop a Google cloud VM instance
 
+provider "google" {
+project = "my-wordpuzzleapp-project"
+region = "europe-west3"
+}
+
+resource "google_compute_instance" "default" {
+name = "vm-instance"
+machine_type = "e2-large"
+zone = "europe-west3-b"
+
+boot_disk {
+initialize params
+image
+}
+}
+
+network_interface
+network = "default"
+access_config {}
+}
+}
 
 # CI/CD Integration
+
+Github Actions
+
+jobs
+terraform
+runs-ons
+steps
+- uses
+- name
+- run
+- name
+
 
 
 
