@@ -142,3 +142,27 @@ steps
   shell: bash
 ```
 
+
+# Setup:Deploy Prometheus and Grafana
+
+Deploy Prometheus and Grafana utilizing Docker Compose
+
+version: ''
+
+services:
+prometheus:
+image:
+volumes:
+ports:
+grafana:
+image:
+ports:
+depends on:
+
+prometheus.yml
+
+global:
+scrape_interval:
+
+
+
