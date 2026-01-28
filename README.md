@@ -100,13 +100,17 @@ Github Actions
 
 jobs
 terraform
-runs-ons
+runs-ons: macos-latest
 steps
-- uses
-- name
-- run
-- name
+- uses: actions/checkout@v3 //Checks repo
+- name: Install Terramate
+- run: |
+  curl sSL https://terramate.io/install.sh | bash
+- shell: bash //default bash
 
-
+- name: Terramate Terraform Plan
+- run: |
+ terramate run terraform plan
+- shell: bash
 
 
