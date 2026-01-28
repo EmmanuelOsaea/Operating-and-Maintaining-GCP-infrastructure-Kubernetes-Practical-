@@ -19,7 +19,9 @@ max_node_count = 10
 }
 }```
 
-# 2.Deploying and Managing Application
+
+
+ # 2.Deploying and Managing Application
 
 # Workload Deployment
 
@@ -66,9 +68,9 @@ type: utilization
 averageUtilization: 70
 ```
 
-# Practical Guide: Buiding & Managing Iac with Terraform and Terramate
+# 2. Practical Guide: Buiding & Managing Iac with Terraform and Terramate
 
-# 1.Setting Up a Terraform Project
+# A.Setting Up a Terraform Project
 
 Googlemain.tf used to develop a Google cloud VM instance
 
@@ -95,6 +97,28 @@ access_config {}
 }
 }
 ```
+
+
+# 4.Evolving Infrastructure with Terramate
+# Adding New Modules
+
+Using a compute module in stacks/prod/Googlemain.tf
+
+```
+module "compute"
+source = "../../modules/compute"
+instance_count = 6
+machine_type = "e2-large"
+}
+```
+
+
+
+
+
+
+
+
 # CI/CD Integration
 
 Github Actions
