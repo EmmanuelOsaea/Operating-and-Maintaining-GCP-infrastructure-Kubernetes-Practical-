@@ -28,22 +28,22 @@ max_node_count = 10
 ```apiVersion: apps/v1
 kind: Deployment
 metadata:
-name: word-puzzle-game
+  name: word-puzzle-game
 spec:
-replicas: 6
-selector:
-matchLabels:
-app: word-puzzle-game
-template
-metadata
-labels
-app: word-puzzle-game
-spec
-containers
--name game-container
-image
-ports
--containerPort:
+ replicas: 6
+ selector:
+  matchLabels:
+   app: word-puzzle-game
+template:
+ metadata:
+  labels:
+   app: word-puzzle-game
+spec:
+containers:
+- name: game-container
+  image:
+  ports:
+- containerPort: 500
 ```
 
 # Autoscaling
@@ -57,8 +57,8 @@ scaleTargetRef:
 apiVersion: apps/v1
 kind: Deployment
 name: word-puzzle-game
-min-replicas: 4
-max-replicas: 20
+minReplicas: 4
+maxReplicas: 20
 metrics:
 -type: resource
 resource:
@@ -85,13 +85,13 @@ name = "vm-instance"
 machine_type = "e2-large"
 zone = "europe-west3-b"
 
-//Make changes below 
+
 boot_disk {
 initialize_params{
-image
+image = "debian-cloud/debian-11"
 }
 }
-//make changes above
+
 network_interface
 network = "default"
 access_config {}
