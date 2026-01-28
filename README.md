@@ -85,12 +85,13 @@ name = "vm-instance"
 machine_type = "e2-large"
 zone = "europe-west3-b"
 
+//Make changes below 
 boot_disk {
-initialize params
+initialize_params{
 image
 }
 }
-
+//make changes above
 network_interface
 network = "default"
 access_config {}
@@ -106,9 +107,9 @@ Using a compute module in stacks/prod/Googlemain.tf
 
 ```
 module "compute"
-source = "../../modules/compute"
-instance_count = 6
-machine_type = "e2-large"
+ source = "../../modules/compute"
+ instance_count = 6
+ machine_type = "e2-large"
 }
 ```
 
@@ -126,17 +127,18 @@ Github Actions
 ```
 jobs
 terraform
-runs-ons: macos-latest
+runs-on: macos-latest
 steps
-- uses: actions/checkout@v3 //Checks repo
+- uses: actions/checkout@v3 // Checks repo
+
 - name: Install Terramate
 - run: |
   curl sSL https://terramate.io/install.sh | bash
-- shell: bash //default bash
+  shell: bash # default bash
 
 - name: Terramate Terraform Plan
-- run: |
- terramate run terraform plan
-- shell: bash
+  run: |
+  terramate run terraform plan
+  shell: bash
 ```
 
