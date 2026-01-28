@@ -72,6 +72,7 @@ averageUtilization: 70
 
 Googlemain.tf used to develop a Google cloud VM instance
 
+```
 provider "google" {
 project = "my-wordpuzzleapp-project"
 region = "europe-west3"
@@ -93,11 +94,12 @@ network = "default"
 access_config {}
 }
 }
-
+```
 # CI/CD Integration
 
 Github Actions
 
+```
 jobs
 terraform
 runs-ons: macos-latest
@@ -112,5 +114,5 @@ steps
 - run: |
  terramate run terraform plan
 - shell: bash
-
+```
 
